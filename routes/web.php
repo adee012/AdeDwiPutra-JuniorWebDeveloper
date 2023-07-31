@@ -19,6 +19,11 @@ Route::get('/', function () {
     return view('index');
 });
 
-
+// Route Login Start
 Route::get('/login', [LoginController::class, 'index']);
+Route::post('/login-proses', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+// Route Login End
+
 Route::get('/anggota', [AnggotaCoontroller::class, 'index']);
+Route::get('/cetak-all', [AnggotaCoontroller::class, 'cetak']);

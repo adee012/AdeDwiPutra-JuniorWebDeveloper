@@ -6,6 +6,7 @@
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Tambah Anggota
             </button>
+            <a href="{{ url('/cetak-all') }}" class="btn btn-primary" target="_blank">Cetak</a>
             <div class="table-responsive">
                 <table class="table table-hover text-center " id="datatablesSimple">
                     <thead>

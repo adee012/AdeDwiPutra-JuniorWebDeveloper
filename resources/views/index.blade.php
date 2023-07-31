@@ -83,8 +83,8 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                                 class="fa fa-history me-2"></i>Data Transaksi</a>
                         <div class="dropdown-menu bg-transparent border-0 ms-5">
-                            <a href="#" class="dropdown-item">Transaksi Peminjaman</a>
-                            <a href="#" class="dropdown-item">Transaksi Pengembalian</a>
+                            <a href="#" class="dropdown-item">Peminjaman</a>
+                            <a href="#" class="dropdown-item">Pengembalian</a>
                         </div>
                     </div>
 
@@ -117,7 +117,10 @@
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">My Profile</a>
                             <a href="#" class="dropdown-item">Settings</a>
-                            <a href="#" class="dropdown-item">Log Out</a>
+                            <form action="{{ url('/logout') }}" method="post">
+                                @csrf
+                                <button class="dropdown-item">Log Out</button>
+                            </form>
                         </div>
                     </div>
                 </div>

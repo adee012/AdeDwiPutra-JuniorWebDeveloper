@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Anggota;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
+
 
 class AnggotaCoontroller extends Controller
 {
@@ -15,6 +17,15 @@ class AnggotaCoontroller extends Controller
         $anggota = Anggota::all();
 
         return view('anggota.anggota', compact('anggota'));
+    }
+
+    public function cetak()
+    {
+        $anggota = Anggota::limit(10)->get();
+
+        $pdf = Pdf::loadView('anggota.cetak-anggota', compact('anggota'));
+        $pdf->setPaper('A4', 'potrait');
+        return $pdf->stream('data-anggota.pdf');
     }
 
     /**
